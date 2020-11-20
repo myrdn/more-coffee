@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://clic2000.fr"
+base_url = "https://more-coffee.net"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -13,4 +13,3 @@ build_search_index = false
 
 [extra]
 # Put all your custom variables here
-hard_link_static = true

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>     </title>
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <!-- PNG favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <!-- Main CSS file and normalize.css (https://github.com/necolas/normalize.css/) or reset of your preference  -->
+    <!-- Main CSS -->
           {% block css %}
 	      <link rel="stylesheet" href="{{ get_url(path="styles.css", trailing_slash=false) | safe }}">
 	  {% endblock css %}
