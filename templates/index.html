@@ -5,17 +5,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+    {% if config.generate_feed %}
+	<link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {% endif %}
+
     <!-- PNG favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Main CSS -->
-          {% block css %}
-	      <link rel="stylesheet" href="{{ get_url(path="styles.css", trailing_slash=false) | safe }}">
-	  {% endblock css %}
+    {% block css %}
+	<link rel="stylesheet" href="{{ get_url(path="styles.css", trailing_slash=false) | safe }}">
+    {% endblock css %}
   </head>
   <body>
-    <!-- Content of your website or application -->
+      <div class="container mx-auto px-80 my-12">
+	  <h1 class="px-2 text-lg">{{ section.title }}</h1>
+	  {% block nav %}
+		<nav>
+		    <ul class="flex flex-row">
+		        <li class="px-2"> <a class="text-pink-400 hover:text-pink-600" href="{{
+				get_url(path="@/_index.md") }}"> About </a> </li>
+		        <li class="px-2"> <a class="text-green-400 hover:text-green-600" href="{{ get_url(path="@/contact.md") }}"> Contact </a> </li>
+		    </ul>
+		</nav>
+	  {% endblock %}
+	  <p class="px-2 pt-4">I work as a web developer at <a class="text-indigo-400 hover:text-indigo-600"
+	      href="https://clic2000.fr">clic2000</a>. I love coffee and
+	  static websites.</p>
+      </div>
   </body>
 </html>
