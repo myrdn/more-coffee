@@ -50,3 +50,6 @@ tags
 
 ### Node Modules ###
 node_modules
+
+### Zola ###
+public
