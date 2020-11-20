@@ -1,6 +1,10 @@
 # The URL the site will be built for
 base_url = "https://more-coffee.net"
 
+# The site title and description; used in feeds by default.
+title = "more coffee"
+description = "Personal homepage of myrdin"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
