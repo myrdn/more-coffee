@@ -20,7 +20,7 @@
     {% endblock css %}
   </head>
   <body>
-      <div class="container mx-auto px-80 my-12">
+      <div class="container mx-auto md:px-80 my-12">
 	  <h1 class="px-2 text-lg">{{ section.title }}</h1>
 	  {% block nav %}
 		<nav>
@@ -28,10 +28,15 @@
 		        <li class="px-2"> <a class="text-pink-400 hover:text-pink-600" href="{{
 				get_url(path="@/_index.md") }}"> About </a> </li>
 		        <li class="px-2"> <a class="text-green-400 hover:text-green-600" href="{{ get_url(path="@/contact.md") }}"> Contact </a> </li>
+		        <li class="px-2"> <a class="text-blue-400 hover:text-blue-600" href="{{
+				get_url(path="@/blog/_index.md") }}"> Blog </a> </li>
 		    </ul>
 		</nav>
 	  {% endblock %}
-	  <p class="px-2 pt-4">I work as a web developer at <a class="text-indigo-400 hover:text-indigo-600"
+
+	  <img class="w-32 h-32 mt-4 mx-2 rounded-md" src="img/selfie.png" alt="selfie of myself, eyecontact">
+
+	  <p class="px-2 pt-4">I am Myrdin, I work as a web developer at <a class="text-indigo-400 hover:text-indigo-600"
 	      href="https://clic2000.fr">clic2000</a>. I love coffee and
 	  static websites.</p>
       </div>
