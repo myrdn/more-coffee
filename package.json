@@ -1,0 +1,18 @@
+{
+  "name": "more-coffee",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "templates/index.html",
+  "scripts": {
+    "watch:css": "postcss styles/styles.css -o static/styles.css -w",
+    "build:css": "postcss styles/styles.css -o static/style.css"
+  },
+  "author": "Myrdin",
+  "license": "CC0 1.0 Universal",
+  "dependencies": {
+    "autoprefixer": "^10.0.2",
+    "postcss": "^8.1.8",
+    "postcss-cli": "^8.3.0",
+    "tailwindcss": "^2.0.1"
+  }
+}
