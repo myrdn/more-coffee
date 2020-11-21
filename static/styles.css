@@ -31167,6 +31167,14 @@ video {
           animation: bounce 1s infinite;
 }
 
+a {
+  color: #FB923C;
+}
+
+a:hover {
+  color: #EA580C;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
