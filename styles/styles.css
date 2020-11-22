@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 a {
-    color: #FB923C;
+  color: #fb923c;
 }
 
 a:hover {
-    color: #EA580C;
+  color: #ea580c;
+}
+
+code {
+  color: white;
+  background-color: #4b5563;
+  display: block;
+  padding: 15px;
 }
