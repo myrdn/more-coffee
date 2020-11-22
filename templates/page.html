@@ -1,1 +1,12 @@
-{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include "head.html" %}
+    <body>
+	<div class="container mx-auto px-5 lg:px-80 my-12">
+	    <h1 class="text-lg">more-coffee.net</h1>
+	    {% include "nav.html" %}
+	    {{ page.title }}
+	    {{ page.content | safe}}
+	</div>
+    </body>
+</html>
