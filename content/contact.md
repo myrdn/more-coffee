@@ -1,5 +1,5 @@
 +++
-title = "Coffee ?"
+title = "Contact"
 +++
 Let's have a coffee !  
 Just paste the following line in your terminal to reveal my e-mail address :  
