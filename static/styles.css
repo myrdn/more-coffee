@@ -31176,11 +31176,19 @@ a:hover {
 }
 
 p {
-  padding: 15px 0px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
 }
 
 code {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   padding: 2px;
 }
 
@@ -31188,7 +31196,7 @@ pre {
   box-sizing: border-box;
   border: 1px solid #777;
   color: black;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   display: block;
   padding: 15px;
   white-space: pre-wrap;

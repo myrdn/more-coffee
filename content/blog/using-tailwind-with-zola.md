@@ -55,6 +55,7 @@ Now configure PostCSS to compile our CSS files. In `package.json` :
   "build:css": "postcss styles/styles.css -o static/style.css"
 }
 ```
+
 ## Templates
 
 Add the following to your templates : 
