@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "head.html" %}
+    <body>
+	<div class="container mx-auto px-5 lg:px-80 my-12">
+	    <h1 class="text-lg">more-coffee.net</h1>
+	    {% include "nav.html" %}
+	    {% block content %}
+	    <ul>
+	    {% for page in section.pages | reverse %}
+		<li>
+		    {{ page.date | date(format="%Y-%m-%d") }}<br>
+		    <a href="{{ page.permalink }}"> {{ page.title }} </a>
+		</li>
+	    {% endfor %}
+	    </ul>
+
+{% endblock content %}
+    	</div>
+    </body>
+</html>

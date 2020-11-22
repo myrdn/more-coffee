@@ -10,9 +10,21 @@ a:hover {
   color: #ea580c;
 }
 
+p {
+    padding: 15px 0px;
+}
+
 code {
-  color: white;
-  background-color: #4b5563;
+    background-color: #EEEEEE;
+    padding: 2px;
+}
+
+pre {
+  box-sizing: border-box;
+  border: 1px solid #777;
+  color: black; 
+  background-color: #EEEEEE;
   display: block;
   padding: 15px;
+  white-space: pre-wrap;
 }
