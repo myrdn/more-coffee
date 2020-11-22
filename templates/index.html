@@ -1,43 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- The language defaults to English - update accordingly if necessary -->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-
-    {% if config.generate_feed %}
-	<link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
-    {% endif %}
-
-    <!-- PNG favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <!-- Main CSS -->
-    {% block css %}
-	<link rel="stylesheet" href="{{ get_url(path="styles.css", trailing_slash=false) | safe }}">
-    {% endblock css %}
-  </head>
-  <body>
-      <div class="container mx-auto px-5 lg:px-80 my-12">
-	  <h1 class="text-lg">{{ section.title }}</h1>
-	  {% block nav %}
+    {% include "head.html" %}
+    <body>
+	<div class="container mx-auto px-5 lg:px-80 my-12">
+	    <h1 class="text-lg">{{ section.title }}</h1>
+	    {% block nav %}
 	    <nav class="mb-6">
 		<ul class="flex flex-row">
 		    <li class="pr-2"> <a class="text-pink-400 hover:text-pink-600" href="{{
-			get_url(path="@/_index.md") }}"> About </a> </li>
+		    get_url(path="@/_index.md") }}"> About </a> </li>
 		    <li class="pr-2"> <a class="text-green-400 hover:text-green-600" href="{{ get_url(path="@/contact.md") }}"> Contact </a> </li>
 		    <li class="pr-2"> <a class="text-blue-400 hover:text-blue-600" href="{{
-			get_url(path="@/blog/_index.md") }}"> Blog </a> </li>
+		    get_url(path="@/blog/_index.md") }}"> Blog </a> </li>
 		</ul>
 	    </nav>
-	  {% endblock %}
-	  {{ section.content | safe}}
-	  <img class="w-32 h-32 mt-8 rounded-md" src="img/selfie.png" alt="selfie of myself, eyecontact">
-	  <a href="https://github.com/myrdn">
-	      <img class="w-5 h-5 mt-8" src="img/GitHub-Mark-32px.png" alt="Github logo ">
-	  </a>
-      </div>
-  </body>
+	    {% endblock %}
+	    {{ section.content | safe}}
+	    <img class="w-32 h-32 mt-8 rounded-md" src="img/selfie.png" alt="selfie of myself, eyecontact">
+	    <a href="https://github.com/myrdn">
+		<img class="w-5 h-5 mt-8" src="img/GitHub-Mark-32px.png" alt="Github logo ">
+	    </a>
+	</div>
+    </body>
 </html>
