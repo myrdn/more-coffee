@@ -7,4 +7,4 @@ title = "more-coffee.net"
 I love coffee and static websites.  
 I am learning web development by myself and at my own pace.   
 <br>
-Here I'll try to share things about my work, what I learn and music; in not so good english or french 🙃
+Here I'll try to share things about my work, what I learn and music; in *not so good* english or french. 🙃
