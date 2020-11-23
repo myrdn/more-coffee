@@ -1,4 +1,4 @@
 +++
-title = "Welcome, you"
+title = "Welcome on my blog"
 +++
-Hello my world!
+Hello world!
