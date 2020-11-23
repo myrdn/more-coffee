@@ -31190,9 +31190,6 @@ h2 {
 code {
   background-color: #eeeeee;
   padding: 2px;
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
 }
 
 pre {
@@ -31203,9 +31200,6 @@ pre {
   display: block;
   padding: 15px;
   white-space: pre-wrap;
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
 }
 
 @media (min-width: 640px) {
