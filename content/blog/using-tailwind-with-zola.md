@@ -17,6 +17,7 @@ page. Keeping editing HTML and managing files would be painfull and time consumi
 basis on our notes, our internal doc and GitHub, using it for our website would be a real plus. We
 also like the idea to separate structure from content. 
 
+Which SSG should we use ?
 [Mathilde](https://mental.af) uses
 it for her personal homepage and [this article](https://blog.gelez.xyz/presentation-zola/) made us decide to
 use [Zola](https://www.getzola.org). It is written in Rust, it comes in a single binary and has nice features
