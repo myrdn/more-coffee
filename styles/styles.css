@@ -25,6 +25,7 @@ h2 {
 code {
   background-color: #eeeeee;
   padding: 2px;
+  user-select: all;
 }
 
 pre {
@@ -35,4 +36,5 @@ pre {
   display: block;
   padding: 15px;
   white-space: pre-wrap;
+  user-select: all;
 }
