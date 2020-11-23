@@ -5,7 +5,7 @@
   "main": "templates/index.html",
   "scripts": {
     "watch:css": "postcss styles/styles.css -o static/styles.css -w",
-    "build:css": "postcss styles/styles.css -o static/style.css"
+    "build:css": "postcss styles/styles.css -o static/styles.css"
   },
   "author": "Myrdin",
   "license": "CC0 1.0 Universal",
