@@ -8,7 +8,7 @@
 	    {% block content %}
 	    <ul>
 	    {% for page in section.pages | reverse %}
-		<li>
+		<li class="pb-5">
 		    {{ page.date | date(format="%Y-%m-%d") }}<br>
 		    <a href="{{ page.permalink }}"> {{ page.title }} </a>
 		</li>
