@@ -14,7 +14,7 @@ echo 'ʢяʃЖʖʡ@ʢʥʃ1ζɑʥЮЮ11λʡ1ʄ' | sed 'y/яʃЖʢʖʡ@ʥɑ1λʄЮ
 You can use [this pgp key](../pgp/public.txt) with this fingerprint `1C0643C5EA2A003A6937773040A451FFC734
 574F`
 
-&arr; Matrix :
+&rarr; Matrix :
 
 `@myrdin:gageure.fr`
 
