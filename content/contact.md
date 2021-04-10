@@ -1,7 +1,7 @@
 +++
 title = "Contact"
 +++
-Let's have a coffee ! The best way to contact me is by email but I also use Signal.
+Let's have a coffee ! The best way to contact me is by email but I also use Signal and Matrix.
 
 &rarr; Email : 
 
