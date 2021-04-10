@@ -11,8 +11,7 @@ Just paste the following line in your terminal to reveal my e-mail address :
 echo 'ʢяʃЖʖʡ@ʢʥʃ1ζɑʥЮЮ11λʡ1ʄ' | sed 'y/яʃЖʢʖʡ@ʥɑ1λʄЮζ/yrdmin@oce.tf-/'
 ```
 
-You can use [this pgp key](../pgp/public.txt) with this fingerprint `1C0643C5EA2A003A6937773040A451FFC734
-574F`
+You can use [this pgp key](../pgp/public.txt) with this fingerprint `1C0643C5EA2A003A6937773040A451FFC734574F`
 
 &rarr; Matrix :
 
