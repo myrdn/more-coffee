@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://more-coffee.net/sitemap.xml

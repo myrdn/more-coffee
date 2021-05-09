@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    
+    <title> Using Tailwind CSS with Zola | more coffee </title>
+    
+    <meta name="description" content="Personal homepage of myrdin"/>
+
+    <!-- PNG favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Main CSS -->
+    
+	<link rel="stylesheet" href="https://more-coffee.net/styles.css">
+    
+    <!-- RSS Discovery -->
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;rss.xml">
+    
+</head>
+
+
+    <body>
+	<div class="container mx-auto px-5 lg:px-80 my-12">
+	    <h1 class="text-lg">more-coffee.net</h1>
+	    <nav class="mb-6">
+    <ul class="flex flex-row">
+	<li class="pr-2"> <a class="text-pink-600 hover:text-pink-800" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;"> About </a> </li>
+	<li class="pr-2"> <a class="text-green-700 hover:text-green-900" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;contact&#x2F;"> Contact </a> </li>
+	<li class="pr-2"> <a class="text-blue-600 hover:text-blue-900" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;blog&#x2F;"> Blog </a> </li>
+	<li class="pr-2"> <a class="text-yellow-700 hover:text-yellow-900" href="https://more-coffee.net/rss.xml"> RSS </a> </li>
+    </ul>
+</nav>
+
+	    
+		<h2 class="text-2xl mb-4">Using Tailwind CSS with Zola</h2>
+		<p>This post is written listening to <a href="https://fr.wikipedia.org/wiki/N%C3%A9pal_(rappeur)">Népal</a>.</p>
+<p>Our website at <a href="https://clic2000.fr">clic2000</a> is pure handcoding in HTML/SASS/JS, no
+<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>, no static site generator. We like it, it is easy
+to understand, secure and fast. We just need to pull the content on our server and compile the SASS files <em>et
+voilà</em>. However we have to admit that editing HTML while adding content is not ideal.
+In recent discussions we decided to give a try to static site generators.</p>
+<p>In a near future we would like to
+add a blog to our website. Also one redondant task is to had words about our recents works on our references
+page. Keeping editing HTML and managing files would be painfull and time consuming. We use markdown on a daily
+basis on our notes, our internal doc and GitHub, using it for our website would be a real plus. We
+also like the idea to separate structure from content. </p>
+<p>Which SSG should we use ?
+<a href="https://mental.af">Mathilde</a> uses
+it for her personal homepage and <a href="https://blog.gelez.xyz/presentation-zola/">this article</a> made us decide to
+use <a href="https://www.getzola.org">Zola</a>. It is written in Rust, it comes in a single binary and has nice features
+like Sass compilation or syntax highlighting. It uses <a href="https://tera.netlify.app">Tera</a> template engine, which
+I haven't tried to the fullest but the <code>include</code> feature is something we miss in our actual website.</p>
+<p>Before working on clic2000 website I decided to build this little piece of internet and 
+this is how I managed configuring Zola using <a href="https://tailwindcss.com">Tailwind
+CSS</a>. It is based on <a href="https://www.maybevain.com/writing/using-tailwind-css-with-zola-static-site-generator/">this great post</a> except it uses
+<code>postcss-cli</code> instead of <code>parcel</code> to compile the styles of the website.</p>
+<p>You need Zola and npm installed on your computer and you are ready to go.</p>
+<h2 id="setup">Setup</h2>
+<p>Create the directory structure of Zola :</p>
+<pre><code>zola init
+</code></pre>
+<p>Create <code>package.json</code> file and install packages : </p>
+<pre><code>npm init
+npm install tailwindcss postcss postcss-cli autoprefixer
+</code></pre>
+<p>Create <code>styles</code> folder and <code>styles.css</code> file :</p>
+<pre><code>mkdir styles
+cd styles
+touch styles.css
+</code></pre>
+<p>Add this content to your <code>styles.css</code> file :</p>
+<pre><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<p>Configure PostCSS to use Tailwind plugin. Add this content at the root of the project in <code>postcss.config.js</code> file :</p>
+<pre><code>module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+</code></pre>
+<p>Now configure PostCSS to compile your CSS files. In <code>package.json</code> : </p>
+<pre><code>&quot;scripts&quot;: {
+  &quot;watch:css&quot;: &quot;postcss styles/styles.css -o static/styles.css -w&quot;,
+  &quot;build:css&quot;: &quot;postcss styles/styles.css -o static/style.css&quot;
+}
+</code></pre>
+<h2 id="templates">Templates</h2>
+<p>Add the following to your templates : </p>
+<pre><code>{% block css %}
+	      &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ get_url(path=&quot;styles.css&quot;, trailing_slash=false) | safe }}&quot;&gt;
+{% endblock css %}
+</code></pre>
+<h2 id="run">Run</h2>
+<p>You can now work on your theme, just run <code>zola serve</code> and <code>npm run watch:css</code> in two terminal tabs.</p>
+<p>Run <code>npm run build:css</code> before production.</p>
+
+	    
+	</div>
+    </body>
+</html>

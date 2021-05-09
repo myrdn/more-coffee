@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    
+    <title> Reveal encrypted email address with echo and sed | more coffee </title>
+    
+    <meta name="description" content="Personal homepage of myrdin"/>
+
+    <!-- PNG favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Main CSS -->
+    
+	<link rel="stylesheet" href="https://more-coffee.net/styles.css">
+    
+    <!-- RSS Discovery -->
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;rss.xml">
+    
+</head>
+
+
+    <body>
+	<div class="container mx-auto px-5 lg:px-80 my-12">
+	    <h1 class="text-lg">more-coffee.net</h1>
+	    <nav class="mb-6">
+    <ul class="flex flex-row">
+	<li class="pr-2"> <a class="text-pink-600 hover:text-pink-800" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;"> About </a> </li>
+	<li class="pr-2"> <a class="text-green-700 hover:text-green-900" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;contact&#x2F;"> Contact </a> </li>
+	<li class="pr-2"> <a class="text-blue-600 hover:text-blue-900" href="https:&#x2F;&#x2F;more-coffee.net&#x2F;blog&#x2F;"> Blog </a> </li>
+	<li class="pr-2"> <a class="text-yellow-700 hover:text-yellow-900" href="https://more-coffee.net/rss.xml"> RSS </a> </li>
+    </ul>
+</nav>
+
+	    
+		<h2 class="text-2xl mb-4">Reveal encrypted email address with echo and sed</h2>
+		<p>I remember the first time I published an email address on a website with no obfuscation. If you did it too you
+can imagine what my mailbox looked like back then. I have been looking for solutions to prevent robots collecting my
+email address and among others I like the way Mathilde does it, mostly because I think it's fun.</p>
+<p>So last weeks I asked Mathilde how did she build her fun way to hide her email address on her personal
+website <a href="https://mental.af/contact/">contact page</a>. She answered she did it manually. I tried  manually too but it's
+painfull so I decided to build a tool to generate the command.</p>
+<p>It is pure client-side javascript, using simple substitution cryptography. It generates a command with common
+unix utilities <code>echo</code> and <code>sed</code>. You just need to enter your email address and you'll get the command. You can
+share the generated command on your website, your visitors will need to paste it into their terminal emulator
+and it will reveal the email address.</p>
+<p>You can find the tool <a href="https://myrdn.github.io/mail-address-encryption/">here</a>.</p>
+
+	    
+	</div>
+    </body>
+</html>

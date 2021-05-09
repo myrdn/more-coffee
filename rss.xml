@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>more coffee</title>
+        <link>https://more-coffee.net</link>
+        <description>Personal homepage of myrdin</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://more-coffee.net/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Reveal encrypted email address with echo and sed</title>
+            <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://more-coffee.net/blog/reveal-encrypted-email-address-with-echo-and-sed/</link>
+            <guid>https://more-coffee.net/blog/reveal-encrypted-email-address-with-echo-and-sed/</guid>
+            <description>&lt;p&gt;I remember the first time I published an email address on a website with no obfuscation. If you did it too you
+can imagine what my mailbox looked like back then. I have been looking for solutions to prevent robots collecting my
+email address and among others I like the way Mathilde does it, mostly because I think it&#x27;s fun.&lt;&#x2F;p&gt;
+&lt;p&gt;So last weeks I asked Mathilde how did she build her fun way to hide her email address on her personal
+website &lt;a href=&quot;https:&#x2F;&#x2F;mental.af&#x2F;contact&#x2F;&quot;&gt;contact page&lt;&#x2F;a&gt;. She answered she did it manually. I tried  manually too but it&#x27;s
+painfull so I decided to build a tool to generate the command.&lt;&#x2F;p&gt;
+&lt;p&gt;It is pure client-side javascript, using simple substitution cryptography. It generates a command with common
+unix utilities &lt;code&gt;echo&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt;. You just need to enter your email address and you&#x27;ll get the command. You can
+share the generated command on your website, your visitors will need to paste it into their terminal emulator
+and it will reveal the email address.&lt;&#x2F;p&gt;
+&lt;p&gt;You can find the tool &lt;a href=&quot;https:&#x2F;&#x2F;myrdn.github.io&#x2F;mail-address-encryption&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Using Tailwind CSS with Zola</title>
+            <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+            <link>https://more-coffee.net/blog/using-tailwind-with-zola/</link>
+            <guid>https://more-coffee.net/blog/using-tailwind-with-zola/</guid>
+            <description>&lt;p&gt;This post is written listening to &lt;a href=&quot;https:&#x2F;&#x2F;fr.wikipedia.org&#x2F;wiki&#x2F;N%C3%A9pal_(rappeur)&quot;&gt;Népal&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Our website at &lt;a href=&quot;https:&#x2F;&#x2F;clic2000.fr&quot;&gt;clic2000&lt;&#x2F;a&gt; is pure handcoding in HTML&#x2F;SASS&#x2F;JS, no
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Content_management_system&quot;&gt;CMS&lt;&#x2F;a&gt;, no static site generator. We like it, it is easy
+to understand, secure and fast. We just need to pull the content on our server and compile the SASS files &lt;em&gt;et
+voilà&lt;&#x2F;em&gt;. However we have to admit that editing HTML while adding content is not ideal.
+In recent discussions we decided to give a try to static site generators.&lt;&#x2F;p&gt;
+&lt;p&gt;In a near future we would like to
+add a blog to our website. Also one redondant task is to had words about our recents works on our references
+page. Keeping editing HTML and managing files would be painfull and time consuming. We use markdown on a daily
+basis on our notes, our internal doc and GitHub, using it for our website would be a real plus. We
+also like the idea to separate structure from content. &lt;&#x2F;p&gt;
+&lt;p&gt;Which SSG should we use ?
+&lt;a href=&quot;https:&#x2F;&#x2F;mental.af&quot;&gt;Mathilde&lt;&#x2F;a&gt; uses
+it for her personal homepage and &lt;a href=&quot;https:&#x2F;&#x2F;blog.gelez.xyz&#x2F;presentation-zola&#x2F;&quot;&gt;this article&lt;&#x2F;a&gt; made us decide to
+use &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt;. It is written in Rust, it comes in a single binary and has nice features
+like Sass compilation or syntax highlighting. It uses &lt;a href=&quot;https:&#x2F;&#x2F;tera.netlify.app&quot;&gt;Tera&lt;&#x2F;a&gt; template engine, which
+I haven&#x27;t tried to the fullest but the &lt;code&gt;include&lt;&#x2F;code&gt; feature is something we miss in our actual website.&lt;&#x2F;p&gt;
+&lt;p&gt;Before working on clic2000 website I decided to build this little piece of internet and 
+this is how I managed configuring Zola using &lt;a href=&quot;https:&#x2F;&#x2F;tailwindcss.com&quot;&gt;Tailwind
+CSS&lt;&#x2F;a&gt;. It is based on &lt;a href=&quot;https:&#x2F;&#x2F;www.maybevain.com&#x2F;writing&#x2F;using-tailwind-css-with-zola-static-site-generator&#x2F;&quot;&gt;this great post&lt;&#x2F;a&gt; except it uses
+&lt;code&gt;postcss-cli&lt;&#x2F;code&gt; instead of &lt;code&gt;parcel&lt;&#x2F;code&gt; to compile the styles of the website.&lt;&#x2F;p&gt;
+&lt;p&gt;You need Zola and npm installed on your computer and you are ready to go.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;Create the directory structure of Zola :&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;zola init
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Create &lt;code&gt;package.json&lt;&#x2F;code&gt; file and install packages : &lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;npm init
+npm install tailwindcss postcss postcss-cli autoprefixer
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Create &lt;code&gt;styles&lt;&#x2F;code&gt; folder and &lt;code&gt;styles.css&lt;&#x2F;code&gt; file :&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir styles
+cd styles
+touch styles.css
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Add this content to your &lt;code&gt;styles.css&lt;&#x2F;code&gt; file :&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;@tailwind base;
+@tailwind components;
+@tailwind utilities;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Configure PostCSS to use Tailwind plugin. Add this content at the root of the project in &lt;code&gt;postcss.config.js&lt;&#x2F;code&gt; file :&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now configure PostCSS to compile your CSS files. In &lt;code&gt;package.json&lt;&#x2F;code&gt; : &lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
+  &amp;quot;watch:css&amp;quot;: &amp;quot;postcss styles&#x2F;styles.css -o static&#x2F;styles.css -w&amp;quot;,
+  &amp;quot;build:css&amp;quot;: &amp;quot;postcss styles&#x2F;styles.css -o static&#x2F;style.css&amp;quot;
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;templates&quot;&gt;Templates&lt;&#x2F;h2&gt;
+&lt;p&gt;Add the following to your templates : &lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;{% block css %}
+	      &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{{ get_url(path=&amp;quot;styles.css&amp;quot;, trailing_slash=false) | safe }}&amp;quot;&amp;gt;
+{% endblock css %}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;run&quot;&gt;Run&lt;&#x2F;h2&gt;
+&lt;p&gt;You can now work on your theme, just run &lt;code&gt;zola serve&lt;&#x2F;code&gt; and &lt;code&gt;npm run watch:css&lt;&#x2F;code&gt; in two terminal tabs.&lt;&#x2F;p&gt;
+&lt;p&gt;Run &lt;code&gt;npm run build:css&lt;&#x2F;code&gt; before production.&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>
