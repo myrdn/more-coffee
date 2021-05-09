@@ -31168,11 +31168,11 @@ video {
 }
 
 a {
-  color: #fb923c;
+  color: #BB5C21;
 }
 
-a:hover {
-  color: #ea580c;
+a:hover, a:focus {
+  color: #917059;
 }
 
 p {

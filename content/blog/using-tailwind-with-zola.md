@@ -26,7 +26,7 @@ I haven't tried to the fullest but the `include` feature is something we miss in
 
 Before working on clic2000 website I decided to build this little piece of internet and 
 this is how I managed configuring Zola using [Tailwind
-CSS](https://tailwindcss.com). It is based on [this great post](https://tailwindcss.com) except it uses
+CSS](https://tailwindcss.com). It is based on [this great post](https://www.maybevain.com/writing/using-tailwind-css-with-zola-static-site-generator/) except it uses
 `postcss-cli` instead of `parcel` to compile the styles of the website.
 
 You need Zola and npm installed on your computer and you are ready to go.
